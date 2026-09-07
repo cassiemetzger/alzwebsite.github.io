@@ -208,6 +208,10 @@ input, select, textarea {
 
 /* Basic */
 
+a:focus, button:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+  }
 	html {
 		box-sizing: border-box;
 	}
@@ -1647,8 +1651,18 @@ input, select, textarea {
 		
 #header {
     overflow: hidden; /* keeps flowers from spilling past the rounded corners */
+	position: relative;
 }
-
+.header-flower {
+     position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 55px;
+    height: 55px;
+    transform: translateY(-50%);
+    opacity: 0.85;
+    z-index: 1;
+}
 /* Header */
 
 	#header-wrapper {
@@ -1680,13 +1694,13 @@ input, select, textarea {
 
 		#header h1 {
 			position: absolute;
-			left: 40px;
-			top: 0;
-			color: #fff;
-			font-size: 2.4em;
-			letter-spacing: -2px;
-			line-height: 86px;
-		}
+    left: 90px; /* was 40px — now clears the flower (20px + 55px wide) plus a gap */
+    top: 0;
+    color: #fff;
+    font-size: 2.4em;
+    letter-spacing: -2px;
+    line-height: 86px;
+}
 
 			#header h1 a {
 				color: #fff;
